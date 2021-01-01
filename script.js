@@ -17,11 +17,14 @@ $(document).ready(function(){
             option.text = data[i].title;
             $("#userInput").append(option);
             if (data[i].title == movieTitle){
-                $("#1").html(data[i].title);
+                $(".class").html(data[i].title);
                 $("#2").html(data[i].description);
                 $("#3").html(data[i].director);
             }
         }
+    })
+    $("#back-btn").click(function(){
+        location.href = "index.html"
     })
 })
 
