@@ -8,29 +8,39 @@
     </head>
     <body>
         <div class="container">
-            <div class="row">
+            <div class="row mt-5">
+                <div class="col-6">
+                    <img src="https://gutta.lv/wp-content/uploads/2015/10/test-img.jpg" alt="" class="img-responsive" style="width: 100%">
+                </div>
+                <div class="col-6 bg-secondary rounded" id="info">
+                    <h4 class="title"></h4>
+                    <h4 class="relDate"></h4>
+                    <h4 class="dir"></h4>
+                    <h4 class="prod"></h4>
+                </div>
+            </div>
+            <div class="row bg-secondary rounded mt-3">
                 <div class="col">
-                    <h1 class="class"></h1>
-
+                    <p class="desc"></p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-6">
-                    <img src="https://gutta.lv/wp-content/uploads/2015/10/test-img.jpg" alt="" class="img-responsive">
-                </div>
-                <div class="col-6">
-                    <h1 class="class"></h1>
-                    <h1 class="class"></h1>
-                    <h1 class="class"></h1>
-                    <h1 class="class"></h1>
-
+                <div class="col">
+                    <h1>reviews</h1>
+                    <h4 class="user"></h4>
+                    <p class="review"></p>
+                    <form>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Username">
+                            <label for="review_input">Review</label>
+                            <textarea class="form-control" name="review_input" id="review_input" rows="3"></textarea> 
+                            <input type="button" id="review_submit" value="Submit"> 
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <h1 id="2"></h1>
-        <h1 id="3"></h1>
-        <h1 id="4"></h1>
-        <h1 id="5"></h1>
         <input type="button" value="Back" id="back-btn">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="script.js"></script>

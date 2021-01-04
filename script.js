@@ -1,6 +1,6 @@
 var url = "https://ghibliapi.herokuapp.com/films"
 $(document).ready(function(){
-  $("#submit").click(function(){
+  $("#film_submit").click(function(){
       location.href = "test.html"
       localStorage.setItem("title", $("#userInput").val());
       console.log($("#userInput").val());
@@ -17,11 +17,26 @@ $(document).ready(function(){
             option.text = data[i].title;
             $("#userInput").append(option);
             if (data[i].title == movieTitle){
-                $(".class").html(data[i].title);
-                $("#2").html(data[i].description);
-                $("#3").html(data[i].director);
+                $(".title").html("Movie Title: " + data[i].title);
+                $(".dir").html("Director: " + data[i].director);
+                $(".relDate").html("Release Date: " + data[i].release_date);
+                $(".prod").html("Producer: " + data[i].producer);
+                $(".desc").html(data[i].description);
             }
         }
+    })
+    $("#review_submit").click(function(){
+        var user = $("#username").val();
+        var review = $("#review_input").val()
+        var html = 
+        "<h4>User: <label class='text-primary'>" + user + "</label></h4>"
+        +"<h4>Review</h4>"
+        +"<p>"+review+"</p>"
+        $(".user").append(html);
+        
+
+        //$(".user").append($("#username").val());
+        //$(".review").append($("#review_input").val());
     })
     $("#back-btn").click(function(){
         location.href = "index.html"
