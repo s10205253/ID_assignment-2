@@ -58,11 +58,12 @@ $(document).ready(function(){
     $("#review_submit").click(function(){
         var user = $("#username").val();
         var review = $("#review_input").val()
-        var html = 
-        "<h4>User: " + user + "</h4>"
-        +"<h4>Review: </h4>"
-        +"<p>"+review+"</p>"
-        $(".user").append(html);
+        var words = 
+        " <h3 class='m-2'>User: </h3>" + "<h5 class='m-2'>" + user + "</h5>"
+        //"<h4>User: " + user + "</h4>"
+        +"<h4 class='m-2'>Review: </h4>"
+        +"<p class='m-2' style = '1.3rem'>"+review+"</p>"
+        $(".user").append(words);
     })
     for (i = 0; i < film_trailer.length; i++){
         if (movieTitle == film_trailer[i].title){

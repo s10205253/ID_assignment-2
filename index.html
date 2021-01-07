@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         <title>ID_assignment-2</title>
     </head>
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h3>Studio Ghibli Fan Website</h3>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <h3>Studio Ghibli Fan Website</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col text-center mt-5">
-                    <img src="https://taniarascia.github.io/sandbox/ghibli/logo.png" alt="" class="img-responsive" style="width:50%">
+                <div class="row">
+                    <div class="col text-center mt-5">
+                        <img src="https://taniarascia.github.io/sandbox/ghibli/logo.png" alt="" class="img-responsive" style="width:65%">
+                    </div>
                 </div>
+                <form>
+                    <div class="form-group col-sm-8 mx-auto mt-4">
+                        <select class="form-control" name="filmSelect" id="userInput">
+                            <option value="">Please choose a film</option>
+                        </select>
+                        <input class="button" type="button" id="film_submit" value="Enter">
+                    </div>
+                </form>
             </div>
-        <form>
-            <div class="form-group col-6 mx-auto mt-4">
-                <select class="form-control" name="filmSelect" id="userInput">
-                    <option value="">Please choose a film</option>
-                </select>
-                <input type="button" id="film_submit" value="Enter">
-            </div>
-        </form>
-        <div class="row">
-            
-        </div>
-        </div>
+        </section>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="script.js"></script>
     </body>

@@ -8,40 +8,53 @@
     </head>
     <body>
         <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h3>Studio Ghibli Fan Website</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center mt-3">
+                    <img src="https://taniarascia.github.io/sandbox/ghibli/logo.png" alt="" class="img-responsive" style="width:35%">
+                </div>
+            </div>
             <div class="row mt-5">
                 <div class="col-md pb-3">
                     <img src="" alt="" class="img-responsive" width="100%" id="movie_img">
                 </div>
                 <div class="col-md rounded" id="info">
-                    <h4 class="title"></h4>
+                    <h4 class="title mt-3"></h4>
                     <h4 class="relDate"></h4>
                     <h4 class="dir"></h4>
                     <h4 class="prod"></h4>
                     <h4>Description:</h4>
                     <div id="desc" class="col">
-                        <p class="desc"></p>
+                        <p class="desc "></p>
                     </div>
-                    <h1>Preview</h1>
+                    <h4>Preview Trailer</h4>
                     <div id="vid" class="embed-responsive embed-responsive-16by9 mt-4 mb-2"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col mt-5">
-                    <h1>Reviews</h1>
-                    <h4 class="user"></h4>
+                    <h1 class="text-light">Reviews</h1>
+                    <div class="user"></div>
+                    <h3 class="ty"></h3>
                     <form>
-                        <div class="form-group">
-                            <label for="username">Username</label>
+                        <div class="form-group mt-5">
+                            <label class="review_label" for="username">Username</label>
                             <input type="text" class="form-control" id="username" placeholder="Username">
-                            <label for="review_input">Review</label>
+                            <label class="review_label" for="review_input">Review</label>
                             <textarea class="form-control" name="review_input" id="review_input" rows="3"></textarea> 
-                            <input type="button" id="review_submit" value="Enter"> 
+                            <input class="button" type="button" id="review_submit" value="Submit"> 
                         </div>
                     </form>
                 </div>
             </div>
+            <div class="text-center">
+                <input class="button" type="button" value="Back" id="back-btn">
+            </div>
         </div>
-        <input type="button" value="Back" id="back-btn">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="script.js"></script>
     </body>
