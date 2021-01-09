@@ -21,8 +21,8 @@ https://xd.adobe.com/view/d743260c-9165-46b6-b5cf-07e88d4cfe93-8210/
 * javascript validation
 # Credits
 ## API
-https://ghibliapi.herokuapp.com/films
-https://api.jikan.moe/v3/
+* https://ghibliapi.herokuapp.com/films
+* https://api.jikan.moe/v3/
 ## Images used
 ### Studio Ghibli Logo
 https://taniarascia.github.io/sandbox/ghibli/logo.png
@@ -70,5 +70,5 @@ https://www.youtube.com/embed/W71mtorCZDw
 ### When Marnie Was There
 https://www.youtube.com/embed/jjmrxqcQdYg
 ## Acknowledgements
-https://www.studioghibli.com.au/
-https://myanimelist.net/
+* https://www.studioghibli.com.au/
+* https://myanimelist.net/
