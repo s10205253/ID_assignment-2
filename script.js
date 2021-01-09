@@ -1,5 +1,5 @@
-var url = "https://ghibliapi.herokuapp.com/films"
-var img_url = "https://api.jikan.moe/v3/search/anime?q="
+var url = "https://ghibliapi.herokuapp.com/films";
+var img_url = "https://api.jikan.moe/v3/search/anime?q=";
 var film_trailer = [
     {"title" : "Castle in the Sky", "link" : '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8ykEy-yPBFc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'},
     {"title" : "Grave of the Fireflies", "link" : '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4vPeTSRd580" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'},
@@ -21,20 +21,20 @@ var film_trailer = [
     {"title" : "The Wind Rises", "link" : '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jGr8XDxB-9I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'},
     {"title" : "The Tale of the Princess Kaguya", "link" : '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/W71mtorCZDw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'},
     {"title" : "When Marnie Was There", "link" : '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jjmrxqcQdYg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'},
-]
+];
 $(document).ready(function(){
   $("#film_submit").click(function(){
-    if ($("#userInput").val() == "")
+    if ($("#userInput").val() === "")
     {
         alert("please pick a option");
     }
     else{
-        location.href = "test.html"
+        location.href = "test.html";
     }
 
       //location.href = "test.html"
       localStorage.setItem("title", $("#userInput").val());
-  })
+  });
     var movieTitle = localStorage.title;
     console.log(movieTitle);
     fetch(url)
@@ -55,29 +55,29 @@ $(document).ready(function(){
                 $(".desc").html(data[i].description);
             }
         }
-    })
+    });
     fetch(img_url + movieTitle + "&page=1")
     .then(response => response.json())
     .then(function(data){
         var test_img = data.results[0].image_url;
         console.log(test_img);
         $("#movie_img").attr("src", test_img);
-    })
+    });
     $("#review_submit").click(function(){
         var user = $("#username").val();
-        var review = $("#review_input").val()
+        var review = $("#review_input").val();
         var words = 
         " <h3 class='m-2'>User: </h3>" + "<h5 class='m-2'>" + user + "</h5>"
         +"<h3 class='m-2'>Review: </h3>"
-        +"<p class='m-2' style = '1.3rem'>"+review+"</p>"
+        +"<p class='m-2' style = '1.3rem'>"+review+"</p>";
         if ((user == "" || review == ""))
         {
-            alert("Username or Review is missing")
+            alert("Username or Review is missing");
         }
         else{
             $(".user").append(words);
         }
-    })
+    });
     for (i = 0; i < film_trailer.length; i++){
         if (movieTitle == film_trailer[i].title){
             console.log(film_trailer[i].link);
@@ -85,9 +85,12 @@ $(document).ready(function(){
         }
     }
     $("#back-btn").click(function(){
-        location.href = "index.html"
-    })
-})
+        location.href = "index.html";
+    });
+});
+
+
+
 
 
 
