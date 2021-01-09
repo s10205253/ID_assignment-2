@@ -1,3 +1,3 @@
 # ID_assignment-2
 # wireframe
-https://xd.adobe.com/view/e50e027a-6903-4829-92e6-91c4dd9e96ea-b05d/
+https://xd.adobe.com/view/6e4e1ed9-62d1-42c4-98cf-ec16ec494f9e-3b1d/
