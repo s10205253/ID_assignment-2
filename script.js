@@ -24,9 +24,16 @@ var film_trailer = [
 ]
 $(document).ready(function(){
   $("#film_submit").click(function(){
-      location.href = "test.html"
+    if ($("#userInput").val() == "")
+    {
+        alert("please pick a option");
+    }
+    else{
+        location.href = "test.html"
+    }
+
+      //location.href = "test.html"
       localStorage.setItem("title", $("#userInput").val());
-      console.log($("#userInput").val());
   })
     var movieTitle = localStorage.title;
     console.log(movieTitle);
@@ -43,12 +50,13 @@ $(document).ready(function(){
                 $(".title").html("Movie Title: " + data[i].title);
                 $(".dir").html("Director: " + data[i].director);
                 $(".relDate").html("Release Date: " + data[i].release_date);
+                $(".rt_score").html("Score: " + data[i].rt_score + "/100");
                 $(".prod").html("Producer: " + data[i].producer);
                 $(".desc").html(data[i].description);
             }
         }
     })
-    fetch("https://api.jikan.moe/v3/search/anime?q=" + movieTitle + "&page=1")
+    fetch(img_url + movieTitle + "&page=1")
     .then(response => response.json())
     .then(function(data){
         var test_img = data.results[0].image_url;
@@ -60,10 +68,15 @@ $(document).ready(function(){
         var review = $("#review_input").val()
         var words = 
         " <h3 class='m-2'>User: </h3>" + "<h5 class='m-2'>" + user + "</h5>"
-        //"<h4>User: " + user + "</h4>"
-        +"<h4 class='m-2'>Review: </h4>"
+        +"<h3 class='m-2'>Review: </h3>"
         +"<p class='m-2' style = '1.3rem'>"+review+"</p>"
-        $(".user").append(words);
+        if ((user == "" || review == ""))
+        {
+            alert("Username or Review is missing")
+        }
+        else{
+            $(".user").append(words);
+        }
     })
     for (i = 0; i < film_trailer.length; i++){
         if (movieTitle == film_trailer[i].title){
