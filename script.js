@@ -40,7 +40,6 @@ $(document).ready(function(){
     fetch(url)
     .then(response => response.json())
     .then(function(data){
-        console.log(data);
         for (i = 0; i < data.length; i++){
             //append the film titles to the dropdown selection bar
             var option = document.createElement("option");
@@ -69,7 +68,6 @@ $(document).ready(function(){
     youtube link*/
     for (i = 0; i < film_trailer.length; i++){
         if (movieTitle == film_trailer[i].title){
-            console.log(film_trailer[i].link);
             $("#vid").html(film_trailer[i].link);
         }
     }
