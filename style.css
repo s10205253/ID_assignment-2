@@ -27,3 +27,8 @@ body {
     background-color: #9CC3D5FF;
     border-radius: 18px;
 }
+@media (max-width: 768px) {
+    #logo {
+        width: 65%;
+    }
+}

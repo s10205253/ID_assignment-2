@@ -1,5 +1,6 @@
 var url = "https://ghibliapi.herokuapp.com/films";
 var img_url = "https://api.jikan.moe/v3/search/anime?q=";
+// list of trailers for the films
 var film_trailer = [
     {"title" : "Castle in the Sky", "link" : '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8ykEy-yPBFc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'},
     {"title" : "Grave of the Fireflies", "link" : '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4vPeTSRd580" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'},
@@ -26,28 +27,29 @@ $(document).ready(function(){
   $("#film_submit").click(function(){
     if ($("#userInput").val() === "")
     {
-        alert("please pick a option");
+        alert("please pick a valid option");
     }
     else{
-        location.href = "test.html";
+        location.href = "info.html";
     }
-
-      //location.href = "test.html"
+    // save the title the user choose into local storage
       localStorage.setItem("title", $("#userInput").val());
   });
     var movieTitle = localStorage.title;
-    console.log(movieTitle);
+    // retrieves info of the films from the api
     fetch(url)
     .then(response => response.json())
     .then(function(data){
         console.log(data);
         for (i = 0; i < data.length; i++){
+            //append the film titles to the dropdown selection bar
             var option = document.createElement("option");
             option.value = data[i].title;
             option.text = data[i].title;
             $("#userInput").append(option);
+            // adds the film information to the page
             if (data[i].title == movieTitle){
-                $(".title").html("Movie Title: " + data[i].title);
+                $(".title").html("Film Title: " + data[i].title);
                 $(".dir").html("Director: " + data[i].director);
                 $(".relDate").html("Release Date: " + data[i].release_date);
                 $(".rt_score").html("Score: " + data[i].rt_score + "/100");
@@ -56,13 +58,22 @@ $(document).ready(function(){
             }
         }
     });
+    // retrieves the img url from the api and adds the film img to the page
     fetch(img_url + movieTitle + "&page=1")
     .then(response => response.json())
     .then(function(data){
-        var test_img = data.results[0].image_url;
-        console.log(test_img);
-        $("#movie_img").attr("src", test_img);
+        var film_img = data.results[0].image_url;
+        $("#film_img").attr("src", film_img);
     });
+    /* adds the trailers to the page by matching the title with the film trailer list and adding the 
+    youtube link*/
+    for (i = 0; i < film_trailer.length; i++){
+        if (movieTitle == film_trailer[i].title){
+            console.log(film_trailer[i].link);
+            $("#vid").html(film_trailer[i].link);
+        }
+    }
+    // appends the user review to the page
     $("#review_submit").click(function(){
         var user = $("#username").val();
         var review = $("#review_input").val();
@@ -70,6 +81,7 @@ $(document).ready(function(){
         " <h3 class='m-2'>User: </h3>" + "<h5 class='m-2'>" + user + "</h5>"
         +"<h3 class='m-2'>Review: </h3>"
         +"<p class='m-2' style = '1.3rem'>"+review+"</p>";
+        // checks if either of the text boxes are empty
         if ((user == "" || review == ""))
         {
             alert("Username or Review is missing");
@@ -78,12 +90,6 @@ $(document).ready(function(){
             $(".user").append(words);
         }
     });
-    for (i = 0; i < film_trailer.length; i++){
-        if (movieTitle == film_trailer[i].title){
-            console.log(film_trailer[i].link);
-            $("#vid").html(film_trailer[i].link);
-        }
-    }
     $("#back-btn").click(function(){
         location.href = "index.html";
     });
